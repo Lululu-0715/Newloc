@@ -1,0 +1,26 @@
+# 构建产物
+build/
+dist/
+Core/build/
+*.ipa
+*.a
+
+# Xcode 用户态
+xcuserdata/
+*.xcuserstate
+DerivedData/
+
+# 编译/索引缓存
+*.pcm
+*.log
+
+# 系统杂项
+.DS_Store
+
+# 内部开发截图（含第三方应用实拍，不入公开仓库）
+docs/shots/
+shots/
+
+# 内部设计文档（含竞品对比与开发决策记录，暂不入公开仓库）
+docs/*.md
+docs/*.html

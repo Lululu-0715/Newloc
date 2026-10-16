@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Newloc</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+
+	<!-- 跳系统设置需要私有 scheme；唤起第三方代理客户端同样靠这份白名单。
+	     不申请的 scheme 不会出现在「可用应用」查询结果里，引导按钮会静默失效。 -->
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>App-Prefs</string>
+		<string>prefs</string>
+		<string>shadowrocket</string>
+		<string>surge</string>
+		<string>quantumult-x</string>
+		<string>loon</string>
+		<string>stash</string>
+		<string>egern</string>
+	</array>
+
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>用于在地图上显示当前真实位置，方便与虚拟位置对照验证。</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>用于在地图上显示当前真实位置，方便与虚拟位置对照验证。</string>
+
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>用于在设备内启动本地定位拦截代理，需要访问本机回环地址。</string>
+
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+	</dict>
+
+	<!-- 后台保活：代理需要在 App 切到后台时继续运行。
+	     只申请 audio——不申请 location，避免被判定为持续采集用户位置。 -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
+
+	<key>UILaunchScreen</key>
+	<dict/>
+
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>arm64</string>
+	</array>
+
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+</dict>
+</plist>

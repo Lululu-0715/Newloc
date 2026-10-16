@@ -1,0 +1,144 @@
+name: Newloc
+options:
+  bundleIdPrefix: com.xxx
+  deploymentTarget:
+    iOS: "15.0"
+  createIntermediateGroups: true
+  developmentLanguage: zh-Hans
+
+knownRegions:
+  - en
+  - zh-Hans
+  - zh-Hant
+  - Base
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MARKETING_VERSION: "1.6.4"
+    CURRENT_PROJECT_VERSION: "34"
+    # 未签名构建：签名由使用者在 Impactor / 爱思助手中完成
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGNING_ALLOWED: "NO"
+    CODE_SIGNING_REQUIRED: "NO"
+    ENABLE_USER_SCRIPT_SANDBOXING: "NO"
+  configs:
+    Debug:
+      # @testable import Newloc 要求被测模块在 Debug 下开启可测试性。
+      # XcodeGen 不会自动补这一项，缺了单元测试会报
+      # "module 'Newloc' was not compiled for testing"。
+      ENABLE_TESTABILITY: "YES"
+      # 界面测试注入口靠这个条件进门（`#if UI_TEST_HOOKS`）。
+      #
+      # **为什么不用标准的 `DEBUG`**：`#Preview` 宏要靠 `swift-plugin-server`
+      # 展开，在受限环境（沙箱 / CI）里插件进程起不来，一开 `DEBUG` 就会报
+      #   external macro implementation type 'PreviewsMacros.SwiftUIView'
+      #   could not be found ... swift-plugin-server produced malformed response
+      # 于是每一次 Debug 编译都失败（出包走 Release，不受影响）。
+      # 用一个只服务于界面测试的条件，既能拿到注入口，又不碰 `#Preview`。
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: UI_TEST_HOOKS
+
+targets:
+  Newloc:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+      - path: Shared
+      # ⚠️ 2026-10-15 审查 C9①：普通版原先没写 excludes，XcodeGen 只自动跳过了
+      # 自己的 `Info.plist`，**`Info-Ultimate.plist` 被当成普通资源拷进了包里**
+      #（实测 `Newloc.app` 顶层躺着 1190 B 的它）。与下面的 NewlocUltimate
+      # 写齐，免得以后重新生成工程时又漏出来。
+      - path: Resources
+        excludes:
+          - "Info.plist"
+          - "Info-Ultimate.plist"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.xxx.loc
+        PRODUCT_NAME: Newloc
+        INFOPLIST_FILE: Resources/Info.plist
+        TARGETED_DEVICE_FAMILY: "1"
+        # 必须显式指定用哪个图标集。XcodeGen 不会像 Xcode 模板那样自动补这一项，
+        # 缺了它 actool 不会把 Assets.xcassets 里的 AppIcon 编译成 App 图标。
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        HEADER_SEARCH_PATHS: "$(PROJECT_DIR)/Core"
+        SWIFT_OBJC_BRIDGING_HEADER: App/Newloc-Bridging-Header.h
+        OTHER_LDFLAGS: "$(inherited) -llocationcore"
+        LIBRARY_SEARCH_PATHS: "$(PROJECT_DIR)/Core/build/$(PLATFORM_NAME)"
+
+  NewlocTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Tests/NewlocTests
+    settings:
+      base:
+        # 必须显式指定：不写的话 PRODUCT_NAME 会解析成空串，
+        # 测试产物变成 ".xctest"，Xcode 会报
+        # "Multiple commands produce .../Newloc.app/PlugIns/.xctest"。
+        PRODUCT_NAME: NewlocTests
+        # 宿主 App 模式下的单元测试必须同时给 TEST_HOST 和 BUNDLE_LOADER，
+        # 否则测试 bundle 链接不到 App 模块的符号。
+        # TEST_HOST 由 XcodeGen 按下方的 target 依赖自动生成，这里只需补 BUNDLE_LOADER。
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        HEADER_SEARCH_PATHS: "$(PROJECT_DIR)/Core"
+        SWIFT_OBJC_BRIDGING_HEADER: App/Newloc-Bridging-Header.h
+    dependencies:
+      - target: Newloc
+
+  # 全能版：与普通版同一份源码，仅多编 THIRD_PARTY_MODE 条件下的
+  # 第三方客户端模式（运行模式切换 + 模块引导 + 写坐标链路）。
+  # 独立 Bundle ID / 显示名，两包可共存于同一台手机。
+  NewlocUltimate:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+      - path: Shared
+      # 两份 Info.plist 都已由 INFOPLIST_FILE 处理，必须从资源拷贝里排除，
+      # 否则 "Multiple commands produce Info.plist"（拷贝阶段输出同名文件）。
+      - path: Resources
+        excludes:
+          - "Info.plist"
+          - "Info-Ultimate.plist"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.xxx.loc.ultimate
+        PRODUCT_NAME: NewlocUltimate
+        INFOPLIST_FILE: Resources/Info-Ultimate.plist
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        HEADER_SEARCH_PATHS: "$(PROJECT_DIR)/Core"
+        SWIFT_OBJC_BRIDGING_HEADER: App/Newloc-Bridging-Header.h
+        OTHER_LDFLAGS: "$(inherited) -llocationcore"
+        LIBRARY_SEARCH_PATHS: "$(PROJECT_DIR)/Core/build/$(PLATFORM_NAME)"
+      configs:
+        Debug:
+          # 与普通版 Debug 同理：UI 测试钩子 + THIRD_PARTY_MODE 一起开。
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: "THIRD_PARTY_MODE UI_TEST_HOOKS"
+        Release:
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: THIRD_PARTY_MODE
+
+schemes:
+  Newloc:
+    build:
+      targets:
+        Newloc: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - NewlocTests
+    archive:
+      config: Release
+
+  NewlocUltimate:
+    build:
+      targets:
+        NewlocUltimate: all
+    run:
+      config: Debug
+    archive:
+      config: Release

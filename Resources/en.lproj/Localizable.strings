@@ -1,0 +1,415 @@
+/* ===== 欢迎页 ===== */
+"跳过" = "Skip";
+"继续" = "Continue";
+"开始使用" = "Get started";
+/* 外观切换钮的读屏标签（取值用 AppearanceStore.Mode.displayName）。 */
+"切换外观" = "Change appearance";
+
+/* 标题里的 \n 是手工断行，不要去掉 —— 断行位置本身就是版式的一部分。 */
+"不用电脑，\n不用数据线" = "No computer,\nno cable";
+"搜索地点或直接输入经纬度，在地图上点一下就能切换。" = "Search a place or type coordinates, then tap once on the map.";
+
+"不用装第三方\n客户端" = "No third-party\nclient";
+"代理与证书都在应用内完成，不用来回切客户端，也不用装描述文件。" = "Proxy and certificate are set up inside the app. No switching clients, no configuration profile.";
+
+"不用猜\n成没成" = "No guessing\nwhether it worked";
+"端到端探测每一次改写是否真正命中，切回前台自动复验。" = "End-to-end probing confirms each rewrite, and it re-verifies when you return.";
+
+/* ===== 状态 ===== */
+"未验证" = "Not verified";
+"验证中" = "Verifying";
+"已生效" = "Active";
+
+"定位服务已关闭" = "Location Services is off";
+"未授予定位权限" = "Location permission needed";
+"定位被限制" = "Location is restricted";
+"代理未接上" = "Proxy not in the path";
+"系统未刷新" = "System hasn't refreshed";
+
+"把系统定位服务打开即可，应用会自动继续校验。" = "Turn Location Services back on and verification will continue automatically.";
+"到「设置 → 隐私与安全性 → 定位服务」允许 Newloc 使用定位。" = "Allow Newloc in Settings › Privacy & Security › Location Services.";
+"设备启用了访问限制，需要管理员解除后才能使用定位。" = "This device has restrictions enabled. An administrator must lift them first.";
+"改写没有走上去：请确认代理已开启、根证书已信任，然后重新验证。" = "The rewrite never reached the wire. Make sure the proxy is running and the root certificate is trusted, then verify again.";
+"改写已经走上去了，是系统还没重新解算位置：到「设置 → 隐私与安全性 → 定位服务」关一下再打开。" = "The rewrite is on the wire — the system just hasn't re-resolved its position. Toggle Location Services off and on in Settings › Privacy & Security.";
+"改写已经走上去了，但系统仍未采用新位置。请先重启设备；仍不生效请到诊断页看有没有 TLS 握手失败。" = "The rewrite is on the wire, but the system still uses the old position. Restart the device first; if that fails, check the diagnostics log for a TLS handshake failure.";
+"改写已经走上去了，是系统还没重新解算位置：重启设备后再回到本应用验证。" = "The rewrite is on the wire — the system just hasn't re-resolved its position. Restart the device, then come back and verify.";
+
+/* ===== 主界面 ===== */
+"搜索地点或坐标" = "Search a place or coordinates";
+"开启虚拟定位" = "Enable spoofing";
+"停止虚拟定位" = "Stop spoofing";
+/* 设置页的停止按钮仍在用这一条，别与上面那条混。 */
+"停止" = "Stop";
+"诊断" = "Diagnostics";
+
+/* 图层菜单。三项与上一代实现完全一致，英文译法也照搬它的 en 包。 */
+"卫星" = "Satellite";
+"混合" = "Hybrid";
+
+/* 位置卡片。星标在地名旁 —— 上一代实现的原文是「点地名旁的星标即可收藏」。 */
+"未命名位置" = "Unnamed location";
+"收藏" = "Save to favorites";
+"取消收藏" = "Remove from favorites";
+"无法获取真实位置" = "Can't get your real location";
+
+/* ===== 设置页 ===== */
+"设置" = "Settings";
+
+"虚拟定位已生效" = "Location override is active";
+"正在校验…" = "Verifying…";
+"虚拟定位未开始" = "Location override is not running";
+"改写已命中，系统当前的位置就是选点位置。" = "Rewrite confirmed. The system position is now your chosen location.";
+"正在端到端探测，请保持应用在前台。" = "Running an end-to-end probe. Please keep the app in the foreground.";
+"回到主界面设置目标坐标并开始定位。" = "Go back to the map, pick a target location and start.";
+
+"连接与代理" = "Connection & proxy";
+"已信任" = "Trusted";
+
+"定位与校验" = "Location & verification";
+"定位精度" = "Accuracy";
+"最高" = "Best";
+"自动校验" = "Auto-verify";
+"回前台自动重校验" = "Re-verify on return";
+
+"外观及个性化" = "Appearance";
+"外观" = "Appearance mode";
+"配色主题" = "Theme";
+
+"关于" = "About";
+"诊断日志" = "Diagnostics log";
+"最近 200 条" = "Last 200";
+"应用版本" = "Version";
+
+/* ===== 外观 ===== */
+"跟随系统" = "System";
+"浅色" = "Light";
+"深色" = "Dark";
+
+/* ===== 配色主题 ===== */
+"黑白极简" = "Monochrome";
+"经典蓝白" = "Classic Blue";
+"玫红雪白" = "Rose";
+"薄荷孔雀绿" = "Mint";
+"夜紫橙金" = "Night";
+"荧光水绿" = "Neon";
+"电光蓝紫" = "Electric";
+
+"强调色跟随外观自动反转：浅色模式下近黑，深色模式下近白。" = "The accent follows the appearance mode: near-black in light, near-white in dark.";
+"彩色渐变主题，界面背景与按钮会带上该色调。" = "A gradient theme — backgrounds and buttons pick up its colours.";
+"中性底色，强调色固定，观感与上一代一致。" = "Neutral surfaces with a fixed accent. Looks the same as before.";
+
+/* ===== 诊断 ===== */
+"运行环境" = "Environment";
+"系统版本" = "System version";
+"缓存刷新方式" = "Cache refresh";
+"关开定位服务" = "Toggle Location Services";
+"重启设备" = "Restart the device";
+"日志条数" = "Log entries";
+"运行日志" = "Runtime log";
+"暂无日志。" = "No log entries yet.";
+"复制日志" = "Copy log";
+"清空" = "Clear";
+
+/* ===== 系统兼容提示 ===== */
+"到「设置 → 隐私与安全性 → 定位服务」关一下再打开，即可刷新定位缓存。" = "Turn Location Services off and on in Settings › Privacy & Security to refresh the location cache.";
+"系统从 iOS 26 起不再响应「关开定位服务」，需要重启设备才能刷新定位缓存。" = "Since iOS 26 the system no longer reacts to toggling Location Services. Restart the device to refresh the location cache.";
+"系统拒绝了本地代理的证书。这是系统级限制，与本机设置无关。" = "The system rejected the local proxy certificate. This is a system-level restriction, not a device misconfiguration.";
+
+/* ===== 代理与证书 ===== */
+"连接设置" = "Connection setup";
+"证书与代理" = "Certificate & proxy";
+"代理服务" = "Proxy service";
+"根证书" = "Root certificate";
+"Wi-Fi 代理" = "Wi-Fi proxy";
+"未信任" = "Not trusted";
+"未检测" = "Not checked";
+"已连通" = "Connected";
+"证书未受信任" = "Certificate not trusted";
+"运行中 · %@" = "Running · port %@";
+"已停止" = "Stopped";
+"启动中…" = "Starting…";
+
+
+"根证书不可用" = "Root certificate unavailable";
+"代理端口被占用" = "Proxy port in use";
+"根证书不被接受" = "Root certificate rejected";
+"代理启动失败" = "Proxy failed to start";
+"到「连接设置」里重建根证书，然后重新安装一次。" = "Rebuild the root certificate in Connection setup, then install it again.";
+"端口 %@ 已被其它程序占用，请先关掉它们再重试。" = "Port %@ is already in use. Close the other program and try again.";
+"到「连接设置」里重建根证书。" = "Rebuild the root certificate in Connection setup.";
+"请重试；若反复失败，到诊断页复制日志反馈。" = "Try again; if it keeps failing, copy the log from Diagnostics and send it to us.";
+"去连接设置" = "Connection setup";
+"知道了" = "OK";
+
+/* ===== 连接设置页 ===== */
+"① 根证书" = "1 · Root certificate";
+"② Wi-Fi 代理" = "2 · Wi-Fi proxy";
+"③ 代理服务" = "3 · Proxy service";
+"下载根证书" = "Download the root certificate";
+"点下面的按钮，在 Safari 里保存证书文件。" = "Tap the button below and save the certificate in Safari.";
+"安装描述文件" = "Install the profile";
+"打开信任开关" = "Turn on trusted certificate";
+"设置 → 通用 → 关于本机 → 证书信任设置" = "Settings › General › About › Certificate Trust Settings";
+"设置 → 通用 → VPN 与设备管理" = "Settings › General › VPN & Device Management";
+"设置 → 通用 → 描述文件与设备管理" = "Settings › General › Profiles & Device Management";
+"证书已装但未开启信任。这是最常见的一步遗漏 —— 请到「证书信任设置」里打开它。" = "The certificate is installed but not trusted. This is the most commonly missed step — turn it on in Certificate Trust Settings.";
+"下载并安装根证书" = "Download & install";
+"重新检测" = "Check again";
+"重建证书" = "Rebuild";
+"服务器" = "Server";
+"端口" = "Port";
+"到「设置 → 无线局域网 → 当前网络的 (i) → 配置代理 → 手动」按上面的值填写。" = "Go to Settings › Wi-Fi › (i) next to the current network › Configure Proxy › Manual, then enter the values above.";
+"流量已经走到代理，但证书没被信任 —— 请先完成上面的第 ① 步。" = "Traffic reaches the proxy, but the certificate isn't trusted — finish step 1 above first.";
+"复制地址" = "Copy address";
+"状态" = "Status";
+"代理服务需要保持运行。若 Wi-Fi 里配着本机代理却把它关掉，设备将无法联网。" = "The proxy must stay running. If Wi-Fi points at it and you stop it, the device loses its network connection.";
+"重启代理服务" = "Restart proxy";
+"启动代理服务" = "Start proxy";
+"关闭代理服务" = "Stop proxy";
+"重建根证书？" = "Rebuild the root certificate?";
+"重建" = "Rebuild";
+"取消" = "Cancel";
+"设备里已经装好的那张旧证书会立即失效，需要重新走一遍安装流程。" = "The certificate already installed on this device stops working immediately. You'll need to install it again.";
+"关闭代理服务？" = "Stop the proxy service?";
+"关闭" = "Stop";
+"如果 Wi-Fi 里还配着本机代理，关闭后设备将无法联网。请同时到 Wi-Fi 设置里取消代理。" = "If Wi-Fi still points at this proxy, the device will lose its network connection. Remove the Wi-Fi proxy setting as well.";
+
+/* ===== P3 卡片改版（选点内层小卡 / 状态行 / 校验行 / 收藏夹） ===== */
+"收藏位置" = "Saved places";
+"完成" = "Done";
+"暂无收藏" = "No saved places";
+"在地图上选好点，点地名旁的星标即可收藏" = "Pick a spot on the map, then tap the star next to its name to save it";
+"证书已信任" = "Certificate trusted";
+"证书未信任" = "Certificate not trusted";
+"证书状态未知" = "Certificate unknown";
+"重新验证" = "Verify again";
+"复制坐标" = "Copy coordinate";
+"运行日志与诊断" = "Logs & diagnostics";
+
+/* ===== P3 地名解析与搜索 ===== */
+"未找到结果" = "No results";
+"坐标体系" = "Coordinate system";
+
+/* ===== P3 状态收敛（移开提示条） ===== */
+"改写仍在原位置生效" = "Spoofing still active at the original spot";
+"回到该位置" = "Go back";
+
+/* ===== 设置：语言 / 字体大小；收藏夹重命名 ===== */
+"语言" = "Language";
+"字体大小" = "Text Size";
+"重命名" = "Rename";
+"名称" = "Name";
+"确定" = "Done";
+"预览" = "Preview";
+"恢复默认" = "Reset to default";
+"小" = "Small";
+"标准" = "Standard";
+"大" = "Large";
+"特大" = "Extra Large";
+
+/* ===== 主按钮开启闸门：网络 / 代理冲突 ===== */
+"当前不是 Wi-Fi 网络：虚拟定位依赖 Wi-Fi 代理，请先连接 Wi-Fi。" = "Not on Wi-Fi: spoofing relies on the Wi-Fi HTTP proxy. Connect to Wi-Fi first.";
+"检测到系统代理指向 %@:%ld，可能开着其他代理软件，请先关闭再试。" = "System proxy points to %@:%ld — another proxy app may be running. Turn it off and try again.";
+
+/* ===== 搜索候选下拉 / Wi-Fi 代理未配置闸门 ===== */
+"跳转到坐标" = "Jump to coordinate";
+"Wi-Fi 代理还没配置：点这里去连接设置，把代理指向 127.0.0.1:8888。" = "Wi-Fi proxy not set up yet: tap here to open connection settings and point it to 127.0.0.1:8888.";
+
+/* ===== 全能版：运行模式 / 第三方客户端模块 ===== */
+"运行模式" = "Run Mode";
+"第三方客户端" = "Third-Party Client";
+"内置代理" = "Built-in Proxy";
+"App 内置代理 + 根证书，装好即用" = "Built-in proxy + root CA inside the app. Works out of the box.";
+"改写模块装在小火箭 / Surge 等客户端里，App 只写坐标" = "The rewrite module lives in Shadowrocket / Surge etc.; the app only writes coordinates.";
+"你的客户端" = "Your Client";
+"模块安装" = "Module Install";
+"模块安装引导" = "Module Install Guide";
+"导入地址与步骤" = "Import URL & steps";
+"把导入地址粘进客户端的「添加模块 / 导入订阅」" = "Paste the import URL into your client's \"Add Module / Import Subscription\"";
+"复制" = "Copy";
+"已复制" = "Copied";
+"打开客户端" = "Open Client";
+"对应的模块文件：%@" = "Module file for this client: %@";
+"两个常见坑" = "Two Common Pitfalls";
+"① 模块显示已启用但定位不动：多半是 MITM 没开或证书没信任 —— 改写必须在 HTTPS 解密下才生效。" = "1. Module enabled but location unchanged: MITM is likely off or the CA untrusted — rewrites only work under HTTPS decryption.";
+"② 脚本拉不下来：导入地址要完整粘贴；刚更新过脚本的话，jsDelivr 缓存最长 12 小时。" = "2. Script won't download: paste the full URL; jsDelivr caches up to 12 hours after an update.";
+"模块检测中" = "Checking module";
+"模块未连接" = "Module offline";
+"模块已连接" = "Module connected";
+"改写运行中" = "Rewriting";
+"模块拒绝保存" = "Module refused to save";
+"模块拒绝清除" = "Module refused to clear";
+"模块接口响应异常" = "Module endpoint responded abnormally";
+"请求未被模块拦截：请确认模块已导入并启用，且客户端已开启连接" = "Request not intercepted by the module. Check that it is imported and enabled, and the client is connected";
+"连不上模块：请确认客户端已开启连接（VPN）且本模块已启用" = "Cannot reach the module. Make sure the client is connected (VPN) and the module is enabled";
+
+/* ===== 全能版：第三方连接设置 / 模块检测（2026-10-12）===== */
+"模块检测" = "Module Check";
+"模块连通" = "Module Reachable";
+"客户端" = "Client";
+"已安装" = "Installed";
+"未安装" = "Not installed";
+"脚本回读" = "Script echo";
+"模块与客户端" = "Module & client";
+"两种模式\n随便换" = "Two modes,\nyour pick";
+"内置代理开箱即用；小火箭、Surge 等客户端装上模块即可，蜂窝网络也能用。" = "Built-in proxy works out of the box; install the module in Shadowrocket, Surge etc. for cellular support.";
+
+/* ===== 第三方模式：状态行对齐 + 脚本回读人话 + 定位没动排查（2026-10-13）===== */
+"第三方代理" = "3rd-party proxy";
+"改写成功 · 本次命中 %ld 处" = "Rewritten · %ld location(s) hit";
+"脚本跑了，但响应里没找到可改写的位置数据" = "Script ran, but no rewriteable location data found in response";
+"定位响应是 gzip 压缩，当前客户端不支持解压 —— 改写被跳过" = "Location response is gzip-compressed and this client cannot decompress — rewrite skipped";
+"脚本在跑，虚拟定位未开启" = "Script running, spoofing not enabled";
+"模块里的目标坐标无效，请重新开启虚拟定位" = "Target coordinates in module invalid — re-enable spoofing";
+"定位响应体为空，脚本放行" = "Empty location response body, script passed through";
+"脚本运行出错：%@" = "Script error: %@";
+"未知脚本状态" = "Unknown script state";
+"定位没动？" = "Location not moving?";
+
+/* 2026-10-13 批次（搜索 X / 相关地点 / 模式合并） */
+"清空搜索" = "Clear search";
+"相关地点" = "Related places";
+"模式与连接" = "Mode & Connection";
+
+/* 2026-10-13 批次（改写证据可视化） */
+"位置下发" = "Delivery";
+"暂无记录" = "No records yet";
+"已下发 %ld 次 · 最近 %@" = "Delivered %ld times · last %@";
+
+/* 2026-10-13 批次（设置页放宽 + 上一代对齐） */
+"第三方模式由你自己的代理客户端执行改写，可覆盖蜂窝网络，无需安装本应用证书。" = "Third-party mode rewrites locations through your own proxy client — covers cellular networks, no certificate install needed.";
+"开启后持续探测，直到给出结论" = "Keeps probing until a verdict is reached";
+"已关闭：开始定位时仍会检查一次" = "Off: one check still runs when spoofing starts";
+"从后台回到前台时接着校验一轮" = "Resumes verification when you come back to the foreground";
+
+/* 2026-10-13 操作手册（A 跟做 + B 速查 合并内置） */
+"使用手册" = "User Guide";
+"从装包到关闭，新手照着做就能用" = "From install to shutdown — just follow along";
+"用侧载工具安装 ipa（爱思助手 / AltStore / Sideloadly 均可）。" = "Install the ipa with a sideloading tool (i4Tools / AltStore / Sideloadly all work).";
+"首次打开会弹定位授权，选「允许」——App 需要读真实位置来计算偏移。" = "On first launch, allow location access — the app needs your real location to compute the offset.";
+"设置 → Wi-Fi → 当前网络 → 配置代理，选「手动」，服务器填 127.0.0.1，端口 8888。" = "Settings → Wi-Fi → current network → Configure Proxy → Manual, server 127.0.0.1, port 8888.";
+"回 App「连接设置」下载根证书，再到系统 设置 → 通用 → VPN 与设备管理 安装，并在 关于本机 → 证书信任设置 里开启完全信任。" = "Back in the app's Connection Settings, download the root certificate; install it under Settings → General → VPN & Device Management, then enable full trust under Settings → General → About → Certificate Trust Settings.";
+"回设置页确认：代理服务运行中、根证书已信任、Wi-Fi 代理已连通。" = "Back on the settings page confirm: proxy running, certificate trusted, Wi-Fi proxy connected.";
+"设置 → 模式与连接 → 运行模式，选「第三方客户端」。" = "Settings → Mode & Connection → Run Mode, choose Third-party client.";
+"在你的代理客户端里安装 Newloc 模块脚本（App 连接设置页可复制脚本、自动检测）。" = "Install the Newloc module script in your proxy client (copy the script and run detection from the app's Connection Settings).";
+"开启客户端，回 App 看「模块连通」变绿。" = "Turn the client on, then make sure \"Module connected\" turns green in the app.";
+"在地图上点一下、搜个地名、或从收藏夹选一条。" = "Tap the map, search a place, or pick one from Favorites.";
+"点主按钮「开启虚拟定位」，等结论变绿「已生效」。" = "Tap the primary button to start spoofing, then wait for the green \"Effective\" verdict.";
+"iOS 26 若提示「已生效 · 缓存未刷新」：重启一次设备立刻见效（系统缓存机制，不是 App 的问题）。" = "On iOS 26, if it says \"Effective · cache not refreshed\": reboot the device once and it takes effect immediately (a system cache behavior, not an app bug).";
+"⚠️ 顺序别反：代理停了而 Wi-Fi 代理还挂着，手机会断网。真断网了别慌——重新打开本 App 就能恢复。" = "⚠️ Keep the order: if the proxy stops while the Wi-Fi proxy is still set, the phone goes offline. If that happens, just reopen this app to recover.";
+"换个位置" = "Change the location";
+"地图点一下 / 搜索 / 收藏夹，重新开启" = "Tap map / search / Favorites, then start again";
+"回真实位置" = "Back to the real location";
+"点「停止」" = "Tap Stop";
+"全机断网" = "The whole phone is offline";
+"Wi-Fi 代理没关而代理停了；重新打开本 App，或把 Wi-Fi 代理改回关闭" = "The proxy stopped while the Wi-Fi proxy stayed set; reopen this app, or switch the Wi-Fi proxy back to Off";
+"定位一直没变" = "The location never changes";
+"显示已生效，其他地图 App 还是旧位置" = "Says effective, but other map apps still show the old spot";
+"部分软件没网" = "Some apps lose network";
+"对方检测代理或本 App 被系统挂起；第三方模式可根治" = "Those apps detect the proxy, or Newloc got suspended by the system; third-party mode fixes this for good";
+"第三方「模块未连接」" = "Third-party \"Module not connected\"";
+"客户端没开 / 模块没装 / 脚本旧；连接设置页重新检测" = "Client off / module missing / script outdated; re-run detection in Connection Settings";
+
+/* ThirdPartySetupView: per-client open button (2026-10-13) */
+"打开" = "Open";
+"打开%@" = "Open %@";
+
+/* RunModeSettingsView footnote */
+
+/* Script readback: short verdict on the row (2026-10-13) */
+"还没触发过" = "Not yet run";
+"改写成功" = "Rewritten";
+"没匹配到" = "No match";
+"gzip 未解压" = "gzip not decoded";
+"未开启" = "Spoof off";
+"坐标无效" = "Bad target";
+"响应为空" = "Empty body";
+"脚本报错" = "Script error";
+"未知状态" = "Unknown state";
+
+/* ===== 设置：玻璃浓度（2026-10-14 滑杆改口径）===== */
+
+/* ===== 定位：权限被拒时直达系统设置（2026-10-14）===== */
+"去系统设置" = "Open Settings";
+
+/* ===== 使用手册目录页简介（2026-10-14 目录化重构）===== */
+"客户端装模块，免证书" = "Module in your proxy client, no certificate needed";
+
+/* ===== 全能版：运行模式 / 第三方模块 / 模块安装引导（2026-10-14 补齐英文）===== */
+"在 App 内复制上面的导入地址" = "Copy the import URL above, inside the app";
+"导入后开启本模块" = "Enable this module after importing";
+"打开客户端，进入「模块 / 插件 / 重写」页，选择「从 URL 导入」并粘贴地址" = "Open your client, go to the Modules / Plugins / Rewrites page, choose “Import from URL”, then paste the address";
+"插件页确认 MITM 已开启" = "On the plugin page, confirm MITM is enabled";
+"确认 HTTPS 解密（MITM）已安装并信任证书" = "Confirm HTTPS decryption (MITM) is enabled and the certificate is trusted";
+"确认 MITM 已开启且主机名包含 gs-loc.apple.com" = "Confirm MITM is enabled and the hostname covers gs-loc.apple.com";
+"设置 → MITM：开启 HTTPS 解密，证书按客户端指引安装并信任" = "Settings → MITM: turn on HTTPS decryption, then install and trust the certificate as your client instructs";
+"重写资源里确认规则已启用，HTTPS 解密已开启" = "In Rewrites, confirm the rule is enabled and HTTPS decryption is on";
+"首页开启连接" = "Turn on the connection on the home screen";
+"首页开启连接（VPN 图标出现）" = "Turn on the connection on the home screen (the VPN icon appears)";
+"首页开启出站连接" = "Turn on the outbound connection on the home screen";
+"首页开启 VPN 连接" = "Turn on the VPN connection on the home screen";
+"改写脚本还没被触发过：开启虚拟定位后，让系统重新定位一次（打开地图 App）再看。" = "The rewrite script hasn't been triggered yet: after enabling virtual location, let the system re-locate once (open a Maps app), then check again.";
+"运行中 · 端口 %@" = "Running · port %@";
+"当前状态" = "Current status";
+"重试" = "Retry";
+"根证书生成失败。" = "Failed to generate the root certificate.";
+"根证书无法保存到应用目录。" = "The root certificate couldn't be saved to the app directory.";
+"定位权限未开启，请在系统设置中允许访问位置。" = "Location access is off. Allow location access in Settings.";
+"当前设备限制了定位功能，无法获取真实位置。" = "This device restricts location services, so the real position can't be read.";
+
+/* ===== 术语表（使用手册）（2026-10-14 补齐英文）===== */
+
+/* ⚠️ 不要翻译：这条是跟改写模块返回的 error 文案做 contains 匹配用的，
+   一旦本地化就匹配不上（见 ThirdParty/ThirdPartyController.swift）。 */
+"无已保存的坐标" = "无已保存的坐标";
+
+/* ===== 玻璃染色 / 玻璃透明度（2026-10-14 新增设置；2026-10-15 删档位器、改口径）===== */
+"玻璃染色" = "Glass tint";
+"拖动滑杆，这张卡片的染色实时变化。" = "Drag the slider — this card's tint updates live.";
+"当前主题不使用玻璃染色，这张卡片保持中性玻璃。" = "This theme doesn't tint glass, so the card stays neutral.";
+"配色主题「%@」只用中性底加一个强调色，不参与玻璃染色；换成彩色渐变主题后这根滑杆即可使用。" = "\"%@\" uses a neutral base with a single accent, so it doesn't tint glass. Pick a gradient theme to use this slider.";
+"更淡" = "Lighter";
+"更浓" = "Stronger";
+
+"玻璃透明度" = "Glass transparency";
+"拖动滑杆，这张卡片的玻璃实时变化。" = "Drag the slider — this card's glass updates live.";
+
+/* ===== 外观汇总页（2026-10-15）===== */
+"明暗" = "Light & dark";
+"配色与玻璃" = "Color & glass";
+
+/* ===== 2026-10-15 全量审查修复（B1~B5）===== */
+"本机系统的原生玻璃只有「通透 / 标准」两种材质，滑杆在 33% 处会切换一次；其余区间由一层中性压实补平，整体读起来是连续的。" = "This system's native glass has two material styles (Clear / Regular). The slider switches once at 33%; everywhere else a neutral compaction layer evens out the rest, so it reads as continuous.";
+"这里调的是磨砂材质本身的不透明度：全区间连续，滑到哪就是哪，没有档位切换。" = "This slider controls the frost material's own opacity: continuous across the whole range — wherever you slide is what you get, with no style switch.";
+"强调色随外观反转" = "Accent follows the appearance";
+"客户端与模块安装请到「设置 → 模式与连接 → 连接设置」。" = "Clients and module installation live in Settings › Mode & Connection › Connection Setup.";
+"定位缓存没刷新：到「设置 → 隐私与安全性 → 定位服务」关一下再打开" = "Location cache not refreshed: turn Location Services off and on under Settings › Privacy & Security";
+"定位缓存没刷新：系统从 iOS 26 起不再响应关开定位服务，需要重启设备" = "Location cache not refreshed: since iOS 26 the system no longer reacts to toggling Location Services — restart the device";
+
+/* ===== 使用手册三册闭环（2026-10-15）===== */
+"内置代理 · 从装到用" = "Built-in Proxy · From Install to Use";
+"安装、配连接、开启、关闭，一条龙" = "Install, connect, spoof, stop — one guide";
+"适合：普通版。App 自带代理和根证书，装好即用。" = "For the Standard version — the app ships its own proxy and root CA, ready out of the box.";
+"用完：回 App 点「停止」，再把 Wi-Fi 代理改回「关闭」。" = "When done: tap Stop in the app, then set the Wi-Fi proxy back to Off.";
+"连接设置页三行没全绿；照本册第 3~5 步重新配" = "The three status lines in Connection Setup aren't all green; redo steps 3-5 of this guide";
+"第三方代理 · 从装到用" = "Third-Party Proxy · From Install to Use";
+"适合：全能版。改写交给手机上已有的代理客户端（小火箭 / Surge 等），可覆盖蜂窝网络、不用装证书。" = "For the Ultimate version — rewriting runs in a proxy client you already have (Shadowrocket / Surge etc.), covers cellular, no certificate needed.";
+"用侧载工具安装 ipa（同内置代理那册），首次打开允许定位授权。" = "Sideload the ipa (same as the built-in proxy guide), then allow location access on first launch.";
+"用完回 App 点「停止」即可，系统设置不用动。" = "When done, just tap Stop in the app — no system settings to revert.";
+"第三方模式不再走系统代理，此问题可根治；若仍有，检查客户端规则是否放行该应用" = "Third-party mode bypasses the system proxy, which fixes this for good; if it persists, check the client's rules allow that app";
+"开发者模式说明" = "About Developer Mode";
+"要不要打开，看这一篇就够" = "Whether to enable it — answered here";
+"结论：用爱思助手 / AltStore / Sideloadly 这类工具侧载后，iOS 16 及以上需要打开「开发者模式」，否则 App 装完打不开。这是系统对开发类签名的强制要求，不是 App 的问题。iOS 15 及以下没有这个开关，不用管。" = "Bottom line: after sideloading with tools like i4Tools / AltStore / Sideloadly, iOS 16+ requires Developer Mode to be enabled, or the app won't launch. That's a system requirement for development-signed apps, not an app issue. iOS 15 and earlier have no such switch.";
+"设置 → 隐私与安全性 → 开发者模式 → 打开 → 按提示重启手机。" = "Settings › Privacy & Security › Developer Mode › On, then restart the phone when prompted.";
+"如果找不到「开发者模式」这一项：先用数据线把手机连一次电脑（或等侧载工具装完第一次），系统才会显示这个开关。" = "Can't find the Developer Mode row? Connect the phone to a computer with a cable once (or let the sideload tool finish its first install) — the switch only appears after that.";
+"不开会怎样" = "What happens if it's off";
+"App 图标点了没反应，或提示「不受信任的开发者」——系统拦的是运行，不是 App 本身坏了。" = "The app icon does nothing when tapped, or shows Untrusted Developer — the system blocks launching it, the app itself isn't broken.";
+"平时要一直开着吗" = "Does it need to stay on?";
+"用本 App 期间保持打开；关掉后已装的侧载 App 会被系统拦停。" = "Keep it on while using this app; turning it off stops installed sideloaded apps from launching.";
+"App 打不开就是它吗" = "Is Developer Mode why my app won't open?";
+"第一次装完就打不开，多半是开发者模式没开；用了几天才打不开，多半是签名过期，重新签一次。" = "Won't open right after install — Developer Mode is probably off. Stops opening after a few days — the signing has likely expired; re-sign it.";
+
+/* ===== 外观分段式 + 按压流光（2026-10-16）===== */
+"主题" = "Theme";
+
+/* ===== 按压光晕三档（2026-10-16）===== */
