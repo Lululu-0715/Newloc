@@ -1,13 +1,13 @@
 {
   "version": "1.6.5",
-  "build": 37,
-  "url": "https://cdn.jsdelivr.net/gh/Lululu-0715/Newloc@main/update/Newloc-1.6.5.bin",
-  "urlUltimate": "https://cdn.jsdelivr.net/gh/Lululu-0715/Newloc@main/update/NewlocUltimate-1.6.5.bin",
-  "size": 3531041,
-  "sha256": "3b2b9f2ad4bbc530c8504c5278c4c49cbfc69242b44f30520d2c5c9b86c42c2d",
-  "sizeUltimate": 3638618,
-  "sha256Ultimate": "14ec7d9d4287019da5e81ecd6c16b60899e179265b7be1c5daa1944fa59f2df5",
+  "build": 38,
+  "url": "https://cdn.jsdelivr.net/gh/Lululu-0715/Newloc@main/update/Newloc-1.6.5-b38.bin",
+  "urlUltimate": "https://cdn.jsdelivr.net/gh/Lululu-0715/Newloc@main/update/NewlocUltimate-1.6.5-b38.bin",
+  "size": 3531270,
+  "sha256": "77112cb5b4ec7335c3c2537a2bf9be38a450f025bc5739ee536981a9f7d8c9fe",
+  "sizeUltimate": 3638907,
+  "sha256Ultimate": "f5b5f31c8399318b76dc20f4423b380b714c7ed64b4b4f8d3e0a6b026b367b22",
   "date": "2026-10-17",
-  "notes": "- 修复更新下载校验失败（CDN 压缩改内容、Ultimate 包哈希分流）",
-  "notesEn": "- Fixed update checksum failures (CDN content-encoding and per-variant hashes)"
+  "notes": "- 版本号显示带 b 号，分得清 b35/b36/b38；修复下载校验失败",
+  "notesEn": "- Version now shows build number; fixed download checksum failures"
 }
