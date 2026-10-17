@@ -1,8 +1,8 @@
 {
   "version": "1.6.5",
   "build": 36,
-  "url": "https://cdn.jsdelivr.net/gh/Lululu-0715/Newloc@main/update/Newloc-1.6.5.ipa",
-  "urlUltimate": "https://cdn.jsdelivr.net/gh/Lululu-0715/Newloc@main/update/NewlocUltimate-1.6.5.ipa",
+  "url": "https://cdn.jsdelivr.net/gh/Lululu-0715/Newloc@main/update/Newloc-1.6.5.bin",
+  "urlUltimate": "https://cdn.jsdelivr.net/gh/Lululu-0715/Newloc@main/update/NewlocUltimate-1.6.5.bin",
   "size": 3530377,
   "sha256": "065f45897a4398d6ac1fb16ed5eae0df28b29347757dd3f5167349723307a75f",
   "date": "2026-10-17",
