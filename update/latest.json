@@ -1,0 +1,11 @@
+{
+  "version": "1.6.5",
+  "build": 36,
+  "url": "https://cdn.jsdelivr.net/gh/Lululu-0715/Newloc@main/update/Newloc-1.6.5.ipa",
+  "urlUltimate": "https://cdn.jsdelivr.net/gh/Lululu-0715/Newloc@main/update/NewlocUltimate-1.6.5.ipa",
+  "size": 3530377,
+  "sha256": "065f45897a4398d6ac1fb16ed5eae0df28b29347757dd3f5167349723307a75f",
+  "date": "2026-10-17",
+  "notes": "- 新增软件内检查更新：有新版本自动提醒，下载后可直接交给轻松签 / TrollStore 安装",
+  "notesEn": "- Added in-app update check: get notified of new versions and hand the IPA straight to ESign / TrollStore"
+}
